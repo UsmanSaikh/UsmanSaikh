@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:context=".CreatePollActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:padding="9dp"
+            android:src="@drawable/baseline_arrow_back_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/ivBack"
+            android:text="@string/create_poll"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/textPoll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Poll Question"
+        android:textColor="@color/purple_500"
+        android:theme="@style/customText" />
+
+    <EditText
+        android:id="@+id/etQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textPoll"
+        android:layout_marginHorizontal="20dp"
+        android:hint="@string/ask_a_question" />
+
+
+    <TextView
+        android:id="@+id/tvAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etQuestion"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Answer options"
+        android:textColor="@color/purple_500"
+        android:theme="@style/customText" />
+
+    <TextView
+        android:id="@+id/tvOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAnswer"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="You can add more options" />
+
+    <TextView
+        android:id="@+id/tvAddOption"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tvOption"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/add_option_bg"
+        android:drawableLeft="@drawable/baseline_add_circle_outline_24"
+        android:drawableTint="@color/white"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="Add Option"
+        android:textColor="@color/white" />
+
+    <!--<com.woxthebox.draglistview.DragListView
+        android:id="@+id/draglistview"
+        android:layout_below="@+id/tvAddOption"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAddOption"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:reverseLayout="true" />
+
+    <TextView
+        android:id="@+id/tvCreate"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/listview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/add_option_bg"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="@string/create"
+        android:textColor="@color/white" />
+
+
+</RelativeLayout>
